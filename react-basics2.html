@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev@8.6.4/dayjs.js"></script>
+    
+    <script type="text/babel">
+
+      /*
+      function LoginForm(){
+        return (
+          <>
+          <div>
+            <input placeholder="email"/>
+            </div>
+            <div>
+            <input placeholder="password"/>
+            </div>
+            <button>login</button>
+            <button>sign up</button>
+          </>
+        );
+      }
+
+      function App() {
+        return (
+          <>
+            <p>Hello</p>
+            <LoginForm />
+          </>
+        );
+      }
+    */
+   /*
+      function ProductDetails({name, price, discountPrice}) {
+        if(!discountPrice){
+          return (
+          <>
+            <p>{name}</p>
+            <p>{price}</p>
+            <p>{discountPrice}</p>
+            <button>add to cart</button>
+          </>
+        );
+        }else{
+          return (
+          <>
+            <p>{name}</p>
+            <del>{price}</del>
+            <p>{discountPrice}</p>
+            <button>add to cart</button>
+          </>
+        );
+        }
+        
+      }
+      */
+
+      function ProductDetails({name, price, discountPrice, image}) {
+        return (
+          <>
+          <img src={image} width="50"/>
+            <p>{name}</p>
+            {discountPrice ? (
+              <>
+                <del>{price}</del>
+                <p>{discountPrice}</p>
+              </>
+            ) : (
+              <p>{price}</p>
+            )}
+            <button>add to cart</button>
+          </>
+        );
+
+      }
+
+
+      function App() {
+        return (
+          <>
+            <h1>Products</h1>
+
+            <ProductDetails 
+            image = "cotton-socks.png"
+            name = "aaaaaaa"
+            price = "Price: 1"
+            discountPrice = "discountPrice = 0.8"
+            />
+            <ProductDetails 
+            image = "cotton-socks.png"
+            name = "bbbbbbb"
+            price = "Price: 2"
+            />
+            <ProductDetails 
+            image = "plain-t-shirt.png"
+            name = "bbbbbbb"
+            price = "Price: 3"
+            />
+          </>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      const root = ReactDOM.createRoot(container)
+      root.render(<App />);
+    
+    </script>
+  </body>
+</html>
