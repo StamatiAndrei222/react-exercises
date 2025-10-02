@@ -10,9 +10,55 @@
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev@8.6.4/dayjs.js"></script>
+    
     <script type="text/babel">
+      //const container = document.querySelector('.js-container');
+      //ReactDOM.createRoot(container).render('Welcome to SuperSimpleDev React Course');
+
+      //const button = <button>Button</button>;
+      //const paragraph = <p>Numele meu este Petrea</p>;
+      /*const shop = 
+      <div>
+        <div>Cotton Socks</div>
+        <div>Price: $10</div>
+        <button>Add to cart</button>
+      </div>;
+      */
+     /*
+      const productCost = 10 + 8 * 2;
+      const shippingCost = 5;
+      const totalCost = productCost + shippingCost;
+      
+       const div =  
+       <div>
+        <p> Product cost: {productCost}</p>
+        <p> Shipping cost: {shippingCost}</p>
+        <p> Total cost: {totalCost}</p>
+      </div>
+      */
+
+      /*
+      const currentDate = dayjs().format('MMMM D');
+      const div =  
+       <div>
+        <p> Current date: {currentDate}</p>
+      </div>
+      */
+
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render('Welcome to SuperSimpleDev React Course');
+      const root = ReactDOM.createRoot(container)
+      
+
+      setInterval(() => {
+        const currentDate = dayjs().format('MMMM D, YYYY HH:mm:ss');
+        const div =  
+         <div>
+          <p> Current date: {currentDate}</p>
+        </div>
+        root.render(div);
+      }, 1000);
     </script>
   </body>
 </html>
